@@ -52,8 +52,13 @@ class invoice extends cds.ApplicationService {
                         let results =  await SELECT.from(invoice);
                     return results
                 })
-
+                this.on('READ','deleteData', async (req) => {
+                    let del = await DELETE.from(invoice).where({"id":17}); 
+                    let results =  await SELECT.from(invoice);
+                    return results
+                })
         await super.init();
+                }
     }
-}
+
 module.exports = {invoice}

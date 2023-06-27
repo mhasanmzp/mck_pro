@@ -11,6 +11,10 @@ entity invoice as projection on cdb.invoice;
         id:Integer;
         amount:Integer;
     }
+    entity deleteData {
+        id:Integer;
+        amount: Integer;
+    }
 }
 
 // service showamount {
