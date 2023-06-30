@@ -15,8 +15,11 @@ entity invoice as projection on cdb.invoice;
         id:Integer;
         amount: Integer;
     }
-}
 
+     action ExcelUpload(data : String)
+      returns {Status : Integer}
+
+}
 // service showamount {
 // entity amount as select from cdb.invoice{amount,quantity} where amount>5000;
 
@@ -24,4 +27,4 @@ entity invoice as projection on cdb.invoice;
   
 
 // action rejectIdoc(data : String) returns {Status : Integer};
-// }
+// 

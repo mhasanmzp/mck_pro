@@ -13,8 +13,8 @@ class invoice extends cds.ApplicationService {
         this.on('READ','readData', async (req) => {
             
                 let results = await SELECT.from(invoice);
-                console.log(JSON.stringify(results));
-                console.log("hello");
+                //console.log(JSON.stringify(results));
+                //console.log("hello");
                 return results;
             })
       
@@ -57,7 +57,12 @@ class invoice extends cds.ApplicationService {
                     let results =  await SELECT.from(invoice);
                     return results
                 })
-        await super.init();
+
+                this.on('ExcelUpload', async (req) => {
+                    var {data}= req.data
+                    return {Status : 201}
+                    })
+
                 }
     }
 
